@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title %}
+HaSe
+{% endblock %}
+
+{% block body%}
+<h4 class="fw-bold mb-3" style="color: #4D4C7D;">{{user.username}}</h4>
+{% if current_user.id == user.id %}
+<a type="button" class="btn btn-outline-danger " href='/logout'>Log Out</a>
+<a type="button" class="btn btn-danger " href='/delete_user/{{user.username}}'>Delete User</a>
+{% endif %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html"%}
+
+{% endblock %}

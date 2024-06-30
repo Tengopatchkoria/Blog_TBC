@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block title %}
+About HaSe
+{% endblock %}
+
+{% block about%}
+<div class="opacity-75" style="background-image: url('https://images.utopia.de/QyKaCKM2koYGbjdWMsDrKXD_49yPU96fcqDwHRA0ecs/rt:fill/w:1280/h:720/g:ce/plain/2023/11/hase-kaninchen-cc0-pixabay-165106-231124.jpg');
+    background-size: cover; padding: 150px;">
+    <h1 class="text-light p-5 m-5 text-center">Your Story <br> Your Voice <br> Your Community</h1>
+</div>
+
+<div class="container my-5" style="font-family: Arial, Helvetica, sans-serif;">
+    <div class="row featurette">
+        <div class="col-md-6">
+            <h2 class="featurette-heading fw-normal lh-1"><strong>Welcome to HaSe!</strong></h2>
+            <p class="lead text-body-secondary">At HaSe, we believe that everyone has a story to tell, a unique
+                perspective to share, and
+                experiences that can inspire others. This is your space to express yourself, connect with like-minded
+                individuals, and discover a community that values your voice.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="500"
+                height="500" src="https://img.freepik.com/vektoren-premium/hase-logo-design_434503-752.jpg" role="img"
+                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+            </img>
+        </div>
+    </div>
+    <hr class="featurette-divider p-3">
+    <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+            <h2 class="featurette-heading fw-normal lh-1"><strong>Our Mission </strong> </h2>
+            <p class="lead text-body-secondary">Whether you're an experienced writer or just starting out, we want to
+                empower you to share
+                your thoughts, ideas, and experiences with the world. We believe in the power of storytelling to bridge
+                gaps, foster understanding, and bring people together.</p>
+        </div>
+        <div class="col-md-5">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded mb-3"
+                width="450" height="450"
+                src="https://imageio.forbes.com/specials-images/dam/imageserve/914776002/960x0.jpg" role="img"
+                aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+            </img>
+        </div>
+    </div>
+    <hr class="featurette-divider p-3">
+    <div class="row featurette">
+        <div class="col-md-6">
+            <h2 class="featurette-heading fw-normal lh-1"><strong>Why Join Us? </strong></h2>
+            <p class="lead text-body-secondary">
+            <ul>
+                <li>Express Yourself Freely: Share your thoughts on any topic that matters to you. From daily life
+                    experiences to deep philosophical musings, your voice is important here.</li>
+                <li>
+                    Connect with Others: Meet new friends, exchange ideas, and become part of a supportive community
+                    that values your contributions.
+                </li>
+                <li>Grow as a Writer: Hone your writing skills, receive feedback from your peers, and explore new styles
+                    and genres in a safe and encouraging environment.</li>
+            </ul>
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded" width="500"
+                height="500"
+                src="https://www.shutterstock.com/image-photo/multiracial-friends-having-fun-laughing-600nw-1016243926.jpg"
+                role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+            </img>
+        </div>
+        <hr class="featurette-divider mt-4 p-3">
+        <div class="row featurette">
+            <div class="col-md-7 order-md-2">
+                <h2 class="featurette-heading fw-normal lh-1"><strong>Get Started</strong> </h2>
+                <p class="lead text-body-secondary">Ready to start sharing? Join us today and become part of a vibrant
+                    community where your story matters. Sign up, create your profile, and start blogging. We can’t wait
+                    to read what you have to say!</p>
+                    <a type="button" class="btn btn-outline-dark me-2" href='/sign_up'>Sign Up</a>
+            </div>
+            <div class="col-md-5">
+                <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto rounded mb-3"
+                    width="450" height="450"
+                    src="https://imageio.forbes.com/specials-images/dam/imageserve/914776002/960x0.jpg" role="img"
+                    aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false">
+                </img>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html"%}
+
+{% endblock %}

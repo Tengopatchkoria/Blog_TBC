@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+Contact
+{% endblock %}
+
+
+{% block about%}
+<P class="text-body-emphasis text-center" style="font-weight: 100;">HASE CORP GROUP</P>
+<h1 class="display-3 text-body-emphasis text-center" style="font-weight: 300;">CONTACT US</h1>
+<div class="container-lg mt-3">
+    <div class="row">
+        <form class="col align-self-center px-5 mx-5">
+            <h3 class="text-body-emphasis m-3 text-center" style="font-weight: 100;">ONLINE INQUIRY</h3>
+            <div class="mb-3 px-5">
+                {{ form.name(class="form-control mx-5", placeholder=form.name.label.text)}}
+            </div>
+            <div class="mb-3 px-5">
+                {{ form.email(class="form-control mx-5", placeholder=form.email.label.text)}}
+            </div>
+            <div class="mb-3 px-5">
+                {{ form.content(class="form-control mx-5", rows='3', placeholder=form.content.label.text)}}
+            </div>
+            <div class="mb-3 text-center">
+                {{ form.submit(class="btn btn-outline-dark")}}
+            </div>
+        </form>
+        <div class="col text-center">
+            <h3 class="text-body-emphasis m-3 text-center" style="font-weight: 100;">CONTACT DETAILS</h3>
+            <div class="mb-4 mx-3">
+                <h5 style="font-weight: 100;">(123) 456-7890</h3>
+            </div>
+            <div class="mb-4 mx-3">
+                <h5 style="font-weight: 100;">HaSe@company.com</h3>
+            </div>
+            <div class="mb-5 mx-3">
+                <h5 style="font-weight: 100;">HaSe@company.com</h3>
+            </div>
+            <div class="my-4 mx-3">
+                <h4 class="fw-3">Based in</h3>
+                <label style="font-weight: 100;">Tbilisi, Georgia</label>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock%}
+

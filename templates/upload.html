@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Upload a Post
+{% endblock %}
+
+
+{% block body%}
+<div class="col-lg-6 align-self-center">
+    <form method="post" enctype="multipart/form-data" class="m-5">
+        {{ pform.hidden_tag() }}
+        {% for errors in pform.errors.values() %}
+        {% for error in errors%}
+        <div class="mb-3">
+            <div class="alert alert-danger">
+                * {{ error }}<br>
+            </div>
+        </div>
+        {% endfor %}
+        {% endfor %}
+
+        <div class="mb-3">
+            {{ pform.title(class="form-control", placeholder=pform.title.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ pform.s_title(class="form-control", placeholder=pform.s_title.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ pform.content(class="form-control", rows='6', placeholder=pform.content.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ pform.background_img.label}}: {{ pform.background_img(accept='.jpg, .png')}}
+        </div>
+        {{ pform.submit(class="btn btn-success", href='/#')}}
+        {% if delete %}
+        <a href="/delete_post/{{ post['id'] }}" class="btn btn-danger">Delete Post</a>
+        {% endif %}
+    </form>
+</div>
+{% endblock %}

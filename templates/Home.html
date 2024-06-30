@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}
+HaSe
+{% endblock %}
+
+{% block body%}
+
+
+{% for post in post_base %}
+{% set likess=like.query.filter(like.post_id==post.id).all() %}
+{% set asd = [] %}
+
+<div class="p-4 p-md-5 mb-4 rounded text-body-emphasis border-bottom shadow"
+    style='background-color: #F0EBE3;'>
+    <div class="col-lg-6 px-0">
+        <a href="/post/{{ post['id'] }}" style="text-decoration: none;">
+            <h1 class="display-4 fst-italic text-black">{{ post['title'] }} </h1>
+            <p class="blog-post-meta text-secondary">{{ post['date'] }} by {{ post['author'] }}</p>
+            <p class="lead my-3 text-secondary-emphasis">{{ post['subtitle']}}</p>
+        </a>
+    </div>
+    <div class="btn px-0">
+        {% if likess != [] %}
+            <!-- {% for like in likess %}
+                {{ asd.append(like.u_id)}}
+            {%endfor%} -->
+            {% if current_user.id in asd%}
+                <a style="text-decoration: none;" href="/like/{{ post['id'] }}"><img class="pb-2"
+                        src="/static/images/icons8-like-48 (1).png" alt="like"> {{ post.likes}} </a>
+            {% else %}
+                <a style="text-decoration: none;" href="/like/{{ post['id'] }}"><img class="pb-2"
+                        src="/static/images/icons8-like-48.png" alt="like"> {{ post.likes}}</a>
+            {%endif%}
+        {% else %}
+            <a style="text-decoration: none;" href="/like/{{ post['id'] }}"><img class="pb-2"
+                    src="/static/images/icons8-like-48.png" alt="like"> {{ post.likes}} </a>
+        {% endif %}
+    </div>
+</div>
+<HR></HR>
+{% endfor %}
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html"%}
+
+{% endblock %}

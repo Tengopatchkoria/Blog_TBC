@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block title %}
+Sign Up on HaSe
+{% endblock %}
+
+{% block body%}
+<div class="col-lg-6 align-self-center">
+    <form method="post" class="m-5">
+        {{ form.hidden_tag() }}
+
+        {% for errors in form.errors.values() %}
+            {% for error in errors%}
+            <div class="mb-3">
+                <div class="alert alert-danger">
+                    * {{ error }}<br>
+                </div>
+            </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="mb-3">
+            {{ form.fname(class="form-control", placeholder=form.fname.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ form.lname(class="form-control", placeholder=form.lname.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ form.email(class="form-control", placeholder=form.email.label.text)}}
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            {{ form.uname(class="form-control", placeholder=form.uname.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ form.password(class="form-control", placeholder=form.password.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ form.r_pass(class="form-control", placeholder=form.r_pass.label.text)}}
+        </div>
+        <div class="mb-3 form-check">
+            {{ form.check(class="form-check-input")}} {{ form.check.label(class="form-check-label")}}
+        </div>
+        {{ form.submit(class="btn btn-success")}}
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}
+HaSe
+{% endblock %}
+
+{% block body%}
+
+
+<form class="px-4 py-5 my-5" method="post">
+    {{ form.hidden_tag() }}
+    <div class="text-center">
+        <div
+            style='background-image: url(/static/images/{{post["img"]}}); background-size: cover; padding: 100px; border-radius: 20px;'>
+            <h1 class="display-5 fw-bold text-body-emphasis">{{ post['title'] }}</h1>
+        </div>
+        <div class="col-lg-6 mx-auto py-5">
+            <p class="lead mb-4">{{ post['content'] }}</p>
+            {% if current_user.id == post.user_id %}
+            <a href="/edit/{{ post['id'] }}" class="btn btn-outline-dark"> Edit Post</a>
+            {% endif %}
+            <div class="btn mt-3">
+                {% if likes != [] %}
+                    {% if current_user.id in asd %}
+                    <a style="text-decoration: none;" href="/like/{{ post['id'] }}"><img class="pb-2"
+                            src="/static/images/icons8-like-48 (1).png" alt="like"> {{ post.likes}} </a>
+                    {% else %}
+                    <a style="text-decoration: none;" href="/like/{{ post['id'] }}"><img class="pb-2"
+                        src="/static/images/icons8-like-48.png" alt="like"> {{ post.likes}} </a>
+                    {%endif%}
+                {% else %}
+                    <a style="text-decoration: none;" href="/like/{{ post['id'] }}"><img class="pb-2"
+                        src="/static/images/icons8-like-48.png" alt="like"> {{ post.likes}} </a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <hr>
+    <h4 class="fw-bold" style="color: #4D4C7D;"> Comments</h4>
+        <div class="py-3 text-start container-lg">
+            <div class="col-lg-6 btn-group">
+                {{ form.content(class="form-control rounded-start", placeholder=form.content.label.text)}}
+                {{ form.submit(class="btn btn-outline-dark rounded-end")}}
+            </div>
+        </div>
+        {% for comment in comments %}
+        <div class="py-3 text-start container-lg">
+            <h6 class="text-body-emphasis"> @{{comment['usern']}}</h6>
+                <p class="col-lg-6">{{comment['content']}}</p>
+        </div>
+        {% endfor %}
+</form>
+
+{% endblock %}
+
+{% block footer %}
+
+{% include "footer.html"%}
+
+{% endblock %}

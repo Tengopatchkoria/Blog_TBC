@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+Log In
+{% endblock %}
+
+
+{% block body%}
+<div class="col-lg-6 align-self-center">
+    <form method="post"class="m-5">
+        {{ form.hidden_tag() }}
+        
+        {% for errors in form.errors.values() %}
+            {% for error in errors%}
+            <div class="mb-3">
+                <div class="alert alert-danger">
+                    * {{ error }}<br>
+                </div>
+            </div>
+            {% endfor %}
+        {% endfor %}
+
+        <div class="mb-3">
+            {{ form.uname(class="form-control", placeholder=form.uname.label.text)}}
+        </div>
+        <div class="mb-3">
+            {{ form.password(class="form-control", placeholder=form.password.label.text)}}
+        </div>
+        {{ form.submit(class="btn btn-success")}}
+    </form>
+</div>
+{% endblock%}
